@@ -38,7 +38,7 @@
                                 </span>
                             @enderror
                         </div>
-
+<!-- 
                         <div class="form-group position-relative has-icon-left mb-4">
                             <fieldset class="form-group">
                                 <select class="form-select @error('role_name') is-invalid @enderror" name="role_name" id="role_name">
@@ -56,7 +56,7 @@
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
-                        </div>
+                        </div> -->
 
                         <div class="form-group position-relative has-icon-left mb-4">
                             <input type="password" class="form-control form-control-lg @error('password') is-invalid @enderror" name="password" placeholder="Choose Password">

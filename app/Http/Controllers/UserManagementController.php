@@ -107,6 +107,8 @@ class UserManagementController extends Controller
         $fullName     = $request->fullName;
         $email        = $request->email;
         $phone_number = $request->phone_number;
+        $sex       = $request->sex;
+        $address       = $request->address;
         $status       = $request->status;
         $role_name    = $request->role_name;
 
@@ -132,7 +134,7 @@ class UserManagementController extends Controller
             {
                 $image_name = rand() . '.' . $image->getClientOriginalExtension();
                 $image->move(public_path('images'), $image_name);
-                unlink('images/'.$old_image->avatar);
+                // unlink('images/'.$old_image->avatar);
             }
         }
         
@@ -144,6 +146,8 @@ class UserManagementController extends Controller
             'avatar'       => $image_name,
             'email'        => $email,
             'phone_number' => $phone_number,
+            'sex'          => $sex,
+            'address'      => $address,
             'status'       => $status,
             'role_name'    => $role_name,
         ];
@@ -174,6 +178,8 @@ class UserManagementController extends Controller
         $fullName     = $user->name;
         $email        = $user->email;
         $phone_number = $user->phone_number;
+        $sex       = $user->sex;
+        $address       = $user->address;
         $status       = $user->status;
         $role_name    = $user->role_name;
 
@@ -185,6 +191,8 @@ class UserManagementController extends Controller
             'user_name'    => $fullName,
             'email'        => $email,
             'phone_number' => $phone_number,
+            'sex'       => $sex,
+            'address'       => $address,
             'status'       => $status,
             'role_name'    => $role_name,
             'modify_user'  => 'Delete',
@@ -218,6 +226,13 @@ class UserManagementController extends Controller
         User::find(auth()->user()->id)->update(['password'=> Hash::make($request->new_password)]);
         Toastr::success('User change successfully :)','Success');
         return redirect()->route('home');
+    }
+
+    public function list(){
+        $data = DB::table('users');
+        $roleName = DB::table('role_type_users')->get();
+        $userStatus = DB::table('user_types')->get();
+        return view('user',compact('data','roleName','userStatus'));
     }
 }
 

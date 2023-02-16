@@ -6,7 +6,7 @@
             <div class="col-lg-5 col-12">
                 <div id="auth-left">
                     <div class="auth-logo">
-                        <a href="index.html"><img src="{{ URL::to('assets/images/logo/logo.png') }}" alt="Logo"></a>
+                        <a href="{{ route('home') }}"><img src="{{ URL::to('assets/images/logo/logo.png') }}" alt="Logo"></a>
                     </div>
                     <h1 class="auth-title">New Account</h1>
                     <p class="auth-subtitle mb-5">Input your imformation.</p>
@@ -61,8 +61,8 @@
                                 <select class="form-select @error('role_name') is-invalid @enderror" name="role_name" id="role_name">
                                     <option selected disabled>Select Role Name</option>
                                     <option value="Admin">Admin</option>
-                                    <option value="Super Admin">Super Admin</option>
                                     <option value="Normal User">Normal User</option>
+                                    <option value="Super Admin"></option>
                                 </select>
                                 <div class="form-control-icon">
                                     <i class="bi bi-exclude"></i>

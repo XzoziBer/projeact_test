@@ -69,13 +69,13 @@
                 </li>
 
                 @if (Auth::user()->role_name=='Admin')
-                        <li class="sidebar-item  has-sub active">
+                        <li class="sidebar-item  has-sub">
                         <a href="#" class='sidebar-link'>
                         <i class="bi bi-person-fill"></i>
                             <span>Account</span>
                         </a>
-                        <ul class="submenu active">
-                            <li class="submenu-item active">
+                        <ul class="submenu">
+                            <li class="submenu-item">
                                 <a href="{{ route('userManagement') }}">User Control</a>
                             </li>
                             <li class="submenu-item">
@@ -89,6 +89,12 @@
                 @endif
                 
                 <li class="sidebar-title">Setting</li>
+                <li class="sidebar-item active"> 
+                    <a href="{{ route('userList') }}" class='sidebar-link'>
+                    <i class="bi bi-person-fill"></i>
+                        <span>Account</span>
+                    </a>
+                </li>
                 <li class="sidebar-item">
                     <a href="{{ route('change/password') }}" class='sidebar-link'>
                         <i class="bi bi-shield-lock"></i>

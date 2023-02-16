@@ -40,7 +40,7 @@
                         @csrf
                         <div class="form-body">
                             <div class="row">
-                                <div class="col-md-4">
+                                <div class="col-md-4 mt-1">
                                     <label>Full Name</label>
                                 </div>
                                 <div class="col-md-8">
@@ -55,10 +55,10 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-4">
+                                <div class="col-md-4 mt-1">
                                     <label>Sex</label>
                                 </div>
-                                <div class="col-md-8">
+                                <div class="col-md-8 mt-2">
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="sex" value="Male" id="male">
                                         <label class="form-check-label" for="male">Male</label>
@@ -73,10 +73,10 @@
                                     </div>
                                 </div>
     
-                                <div class="col-md-4">
+                                <div class="col-md-4 mt-3">
                                     <label>Email Address</label>
                                 </div>
-                                <div class="col-md-8">
+                                <div class="col-md-8 mt-3">
                                     <div class="form-group has-icon-left">
                                         <div class="position-relative">
                                             <input type="email" class="form-control @error('emailAddress') is-invalid @enderror" value="{{ old('emailAddress') }}"
@@ -103,7 +103,7 @@
                                 </div>
     
                                 <div class="col-md-4">
-                                    <label>Position</label>
+                                    <label>Address</label>
                                 </div>
                                 <div class="col-md-8">
                                     <div class="form-group has-icon-left">
@@ -116,35 +116,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
-                                    <label>Departement</label>
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="form-group has-icon-left">
-                                        <div class="position-relative">
-                                            <input type="text" class="form-control @error('department') is-invalid @enderror" value="{{ old('department') }}"
-                                                placeholder="Enter departement" name="department">
-                                            <div class="form-control-icon">
-                                                <i class="bi bi-shop-window"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-    
-                                <div class="col-md-4">
-                                    <label>Salary</label>
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="form-group has-icon-left">
-                                        <div class="position-relative">
-                                            <input type="text" class="form-control @error('salary') is-invalid @enderror" value="{{ old('salary') }}"
-                                                placeholder="Enter salary" name="salary">
-                                            <div class="form-control-icon">
-                                                <i class="bi bi-envelope-fill"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                
 
                                 <div class="col-12 d-flex justify-content-end">
                                     <button type="submit" class="btn btn-primary me-1 mb-1">Save</button>

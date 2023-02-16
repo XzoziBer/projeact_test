@@ -65,15 +65,15 @@ class LoginController extends Controller
         $email    = $request->email;
         $password = $request->password;
         
-        $dt         = Carbon::now();
-        $todayDate  = $dt->toDayDateTimeString();
+        // $dt         = Carbon::now();
+        // $todayDate  = $dt->toDayDateTimeString();
 
         $activityLog = [
 
             'name'        => $email,
             'email'       => $email,
             'description' => 'has log in',
-            'date_time'   => $todayDate,
+            // 'date_time'   => $todayDate,
         ];
         if (Auth::attempt(['email'=>$email,'password'=>$password,'status'=>'Active'])) {
             DB::table('activity_logs')->insert($activityLog);

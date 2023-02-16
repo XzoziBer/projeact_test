@@ -31,7 +31,20 @@
         <section class="section">
             <div class="card">
                 <div class="card-header">
-                    User Datatable
+                <div class="row">
+                <div class="col-12 col-md-6 order-md-1 order-last">
+                    User Datateble
+                </div>
+                <div class="col-12 col-md-6 order-md-2 order-first">
+                    <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
+                        <ol class="breadcrumb">
+                        <a href="{{ route('user/add/new') }}">
+                            <span class="badge bg-primary pt-1"><i class="bi bi-plus-square-fill"></i></span>
+                        </a>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
                 </div>
                 <div class="card-body">
                     <table class="table table-striped" id="table1">
@@ -59,28 +72,30 @@
                                     </td>
                                     <td class="email">{{ $item->email }}</td>
                                     <td class="phone_number">{{ $item->phone_number }}</td>
-                                    @if($item->status =='Active')
-                                    <td class="status"><span class="badge bg-success">{{ $item->status }}</span></td>
-                                    @endif
-                                    @if($item->status =='Disable')
-                                    <td class="status"><span class="badge bg-danger">{{ $item->status }}</span></td>
-                                    @endif
-                                    @if($item->status ==null)
-                                    <td class="status"><span class="badge bg-danger">{{ $item->status }}</span></td>
-                                    @endif
-                                    @if($item->role_name =='Admin')
-                                    <td class="role_name"><span  class="badge bg-success">{{ $item->role_name }}</span></td>
-                                    @endif
-                                    @if($item->role_name =='Super Admin')
-                                    <td class="role_name"><span  class="badge bg-info">{{ $item->role_name }}</span></td>
-                                    @endif
-                                    @if($item->role_name =='Normal User')
-                                    <td class="role_name"><span  class=" badge bg-warning">{{ $item->role_name }}</span></td>
-                                    @endif
+                                    <td>
+                                        
+                                        @if($item->status =='Active')
+                                        <span class="badge bg-success">{{ $item->status }}</span>
+                                        @endif
+                                        @if($item->status =='Disable')
+                                        <span class="badge bg-danger">{{ $item->status }}</span>
+                                        @endif
+                                        @if($item->status ==null)
+                                        <span class="badge bg-danger">{{ $item->status }}</span>
+                                        @endif
+                                    <td>
+                                        @if($item->role_name =='Admin')
+                                        <span  class="badge bg-success">{{ $item->role_name }}</span>
+                                        @endif
+                                        @if($item->role_name =='Super Admin')
+                                        <span  class="badge bg-info">{{ $item->role_name }}</span>
+                                        @endif
+                                        @if($item->role_name =='Normal User')
+                                        <span  class=" badge bg-warning">{{ $item->role_name }}</span>
+                                        @endif
+                                    </td>
+
                                     <td class="text-center">
-                                        <a href="{{ route('user/add/new') }}">
-                                            <span class="badge bg-info"><i class="bi bi-person-plus-fill"></i></span>
-                                        </a>
                                         <a href="{{ url('view/detail/'.$item->id) }}">
                                             <span class="badge bg-success"><i class="bi bi-pencil-square"></i></span>
                                         </a>  
